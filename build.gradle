@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group 'me.urfate'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'commons-cli:commons-cli:1.5.0'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'me.urfate.Main'
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
